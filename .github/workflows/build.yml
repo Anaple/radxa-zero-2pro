@@ -36,13 +36,13 @@ jobs:
         boards: [radxa-zero-2pro]
         build_systems: [rbuild]
         # distros: [debian, ubuntu]
-        suites: [bookworm, jammy]
-        flavors: [kde, cli]
+        suites: [jammy]
+        flavors: [gnome, kde]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Upload rbuild image
-        uses: radxa-repo/rbuild@main
+        uses: Anaple/rbuild@main
         if: matrix.build_systems == 'rbuild'
         with:
           board: ${{ matrix.boards }}
